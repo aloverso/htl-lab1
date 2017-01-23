@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Olin Course Catalog: {{ area }}</title>
+    <title>Olin Course Catalog: {{ instructor }}</title>
     <style type="text/css">
       td, th { border: 0 !important; }
 
@@ -16,14 +16,13 @@
   <body>
     <h1 id="header">
       <a href="/"><i class='fa fa-arrow-left'></i></a>
-        <i class='fa fa-{{icons[area]}}'></i>
-        {{area}}
+        {{instructor}}
     </h1>
     <dl>
       {% for index, course in courses %}
         <div class="item">
           <h1><dt>{{ course.course_number }}: {{ course.course_name }}</dt></h1>
-          <h2><a href="/instructor/{{course.course_contact}}">{{ course.course_contact }}</a></h2>
+          <h2>{{ course.course_contact }}</h2>
           <dd>{{ course.course_description }}</dd>
         </div>
       {% endfor %}

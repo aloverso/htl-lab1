@@ -46,10 +46,31 @@ You shouldn't need to run this – in fact, running it too often may look like a
 As with all web scraping, this script is fragile – a minor change to the olin.edu web design or URL format
 could break it with no warning.
 
+## Extension Documentation
+
+### Improvements to Visual Aesthetics
+
+I added CSS to the templates in order to make the site prettier and more readable.
+
+![home screen](homescreen.png)
+
+On the homepage, I used flexbox to turn the list of links into a grid of buttons that aligns itself automatically with the width of the page.  I also assigned each link an icon from [Font Awesome](http://fontawesome.io/) to be more visual-based.  This required creating a dictionary assigning each course area to an icon, and passing it into the template as an argument to be used.
+
+For the contacts list, I also used flexbox to create columns of names, an improvement over the single paragraph block from before.
+
+![areas screen](areascreen.png)
+
+On the content screen for each course area, I changed the background of the page and each list item.  I added padding and spacing around lines and paragaphs, and changed the font type and size for readability.  I also added a header.
+
+### Improvements to Functionality
+
+First, I added a back button to the top of each content page, which links the user back to the main navigational page of the site.  Then, I created an additional set of content pages, in which clicking on an instructor's name on the home page or on the course-areas page takes you to a list of all classes taught by that professor.
 
 ## Contributors
 
 Written by Oliver Steele <oliver.steele@olin.edu>.
+
+Additions by Anne LoVerso <anne@loverso.org>.
 
 
 ## License

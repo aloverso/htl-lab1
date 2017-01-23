@@ -1,21 +1,32 @@
 <html>
   <head>
     <title>Olin Course Catalog</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/styles.css"/>
+    <script src="https://use.fontawesome.com/2be91a05f0.js"></script>
     <style type="text/css">
       td, th { border: 0 !important; }
     </style>
   </head>
   <body>
-    <h2>Areas</h2>
-    {% for area in areas | sort %}
-      <ul>
-        <li><a href="/area/{{area}}">{{area}}</a></li>
-      </ul>
-    {% endfor %}
+    <div class="container">
+    <h1>Areas</h1>
+      <div class="area-buttons-container">
+        {% for area in areas | sort %}
+          <div class="area-button"><a href="/area/{{area}}">
+            <i class='fa fa-{{icons[area]}} fa-4x' style='color: #22457c'></i>
+            </br>
+            {{area}}
+          </a></div>
+        {% endfor %}
+      </div>
 
-    <h2>Contacts</h2>
-    {% for contact in contacts | sort %}
-      {{contact}}
-    {% endfor %}
+      <h1>Contacts</h1>
+      <div class="contacts-container">
+      {% for contact in contacts | sort %}
+        <div class="contact"><a href="instructor/{{contact}}">{{contact}}</a></div>
+      {% endfor %}
+      </div>
+    </div>
   </body>
 </html>
